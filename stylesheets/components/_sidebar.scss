@@ -1,0 +1,46 @@
+$sidebar-width: 280px;
+
+// 行動版（預設）
+.sidebar {
+    width: $sidebar-width;
+    margin-left: -$sidebar-width; //負值，拉到瀏覽器的左側外
+    transition: margin-left .25s; // 動態轉換效果，時間越快越好
+}
+
+.main {
+    width: 100%; //佔滿整個寬度
+}
+
+//展開sidebar (點擊展開按鈕後會展開）
+.sidebar-toggled{
+    .sidebar{
+        margin-left: 0; //點擊展開按鈕後會展開
+    }
+}
+
+// 桌面版 (up)
+@include media-breakpoint-up(sm) {
+    .sidebar {
+        width: $sidebar-width;
+        margin-left: 0; //需加這個把選單拉回瀏覽器內
+    }
+
+    .main {
+        width: calc(100vw - #{$sidebar-width});
+    }
+
+    //收合sidebar (點擊展開按鈕後會收合）
+    .sidebar-toggled{
+        .sidebar{
+            margin-left: -$sidebar-width; //點擊展開按鈕後會收合
+        }
+        .main{
+            width:100%; //收合後可直接拉滿整個寬度
+            margin-left: 0; //沒加這個好像沒影響？
+        }
+    }
+}
+
+//calc把變數視為字串，所以需在前面加井字號再加大括號把變數框起來
+//注意：- 字號前後要空一格，否則無法編譯
+
