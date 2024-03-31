@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./stylesheets/all.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="d-flex">
+        <aside class="sidebar vh-100 border-end pt-3 d-flex bg-white flex-column">
+            <!-- 後台名稱 -->
+            <div class="px-4">
+                <strong>六角西餐廳</strong>
+                - 後台管理
+            </div>
+            <!-- 選單 -->
+            <div class="overflow-auto mt-3">
+                <div>
+                    <a href="#" class="sidebar-link">
+                        <div class="px-4">首頁</div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#menu-order" class="sidebar-link" data-bs-toggle="collapse">
+                        <div class="d-flex justify-content-between px-4">
+                            <p class="mb-0">訂單管理</p>
+                            <i class="bi bi-caret-down"></i>
+                        </div>
+                    </a>
+                    <div class="collapse" id="menu-order">
+                        <a href="#" class="sidebar-link">
+                            <div class="ps-5">其它項目</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- 登出按鈕 -->
+            <a href="#" class="mt-auto sidebar-link">
+                <div class="px-4">登出</div>
+            </a>
+        </aside>
+        <main class="main">
+            <div class="bg-white w-100 border-bottom sticky-top">
+                <a href="#" class="d-inline-block py-3 px-4 boder-end" id="toggle-btn">
+                    <i class="bi bi-arrows-angle-expand"></i>
+                </a>
+            </div>
+            <div class="p-4">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill active d-flex align-items-center" aria-current="page"
+                            href="#">Active
+                            <span class="badge bg-secondary ms-1">4</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill d-flex align-items-center" href="#">Link
+                            <span class="badge bg-secondary ms-1">4</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill d-flex align-items-center" href="#">Link
+                            <span class="badge bg-secondary ms-1">4</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+                <div class="card shadow-sm mt-3">
+                    <div class="card-header bg-transparent">
+                        <div class="input-group d-flex align-items-center">
+                            <div class="dropdown">
+                                <button class="btn btn-outline-dark dropdown-toggle btn-sm" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    操作
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                            <span class="input-group-text border-0 bg-transparent pe-0">
+                                <i class="bi bi-search-heart"></i>
+                            </span>
+                            <input type="search" class="form-control border-0 shadow-none">
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0 text-nowrap">
+                                <thead class="bg-light">
+                                    <tr class="align-middle">
+                                        <th scope="col" class="ps-4"></th>
+                                        <!-- 雖然第一個th有加ps-3，但因為沒有任何文字，導致整列的高度沒有預期的那麼高，故建議在第二個th補高度 -->
+                                        <th scope="col" class="py-3">航班時間</th>
+                                        <th scope="col">目的地</th>
+                                        <th scope="col">航班編號</th>
+                                        <th scope="col">航空公司</th>
+                                        <th scope="col">航班狀態</th>
+                                        <th scope="col" class="text-end">登機門</th>
+                                        <th scope="col" class="pe-4 ps-5">編輯</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="align-middle">
+                                        <td class="ps-4">
+                                            <input type="checkbox" class="form-check-input">
+                                        </td>
+                                        <td scope="row" class="ps-4">13:45</td>
+                                        <td>東京 Tokyo</td>
+                                        <td>BR198</td>
+                                        <td>長榮航空 EVA Air</td>
+                                        <td>
+                                            <div class="text-muted">登機中</div>
+                                        </td>
+                                        <td class="text-end">615</td>
+                                        <td class="ps-5">
+                                            <div class="btn-group">
+                                                <a href="#" class="btn btn-sm btn-outline-dark">
+                                                    編輯 <i class="bi bi-pen"></i></a>
+                                                <!-- <div class="dropdown"> 移除 -->
+                                                <button class="btn btn-sm btn-outline-dark dropdown-toggle"
+                                                    type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">操作
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                    <li><a class="dropdown-item" href="#">修改狀態</a></li>
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                        data-bs-target="#deleteModal"
+                                                        data-bs-order-id="BR198">取消航班</a></li>
+                                                </ul>
+                                                <!-- </div> -->
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="align-middle">
+                                        <td class="ps-4">
+                                            <input type="checkbox" class="form-check-input">
+                                        </td>
+                                        <td scope="row" class="ps-4">13:45</td>
+                                        <td>東京 Tokyo</td>
+                                        <td>BR198</td>
+                                        <td>長榮航空 EVA Air</td>
+                                        <td>
+                                            <div class="text-muted">登機中</div>
+                                        </td>
+                                        <td class="text-end">615</td>
+                                        <td class="ps-5">
+                                            <div class="btn-group">
+                                                <a href="#" class="btn btn-sm btn-outline-dark">
+                                                    編輯 <i class="bi bi-pen"></i></a>
+                                                <!-- <div class="dropdown"> 移除 -->
+                                                <button class="btn btn-sm btn-outline-dark dropdown-toggle"
+                                                    type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">操作
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                    <li><a class="dropdown-item" href="#">修改狀態</a></li>
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                        data-bs-target="#deleteModal"
+                                                        data-bs-order-id="BR198">取消航班</a></li>
+                                                </ul>
+                                                <!-- </div> -->
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr class="align-middle">
+                                        <td class="ps-4">
+                                            <input type="checkbox" class="form-check-input">
+                                        </td>
+                                        <td scope="row" class="ps-4">13:45</td>
+                                        <td>東京 Tokyo</td>
+                                        <td>BR198</td>
+                                        <td>長榮航空 EVA Air</td>
+                                        <td>
+                                            <div class="text-muted">登機中</div>
+                                        </td>
+                                        <td class="text-end">615</td>
+                                        <td class="ps-5">
+                                            <div class="btn-group">
+                                                <a href="#" class="btn btn-sm btn-outline-dark">
+                                                    編輯 <i class="bi bi-pen"></i></a>
+                                                <!-- <div class="dropdown"> 移除 -->
+                                                <button class="btn btn-sm btn-outline-dark dropdown-toggle"
+                                                    type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">操作
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                    <li><a class="dropdown-item" href="#">修改狀態</a></li>
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                        data-bs-target="#deleteModal"
+                                                        data-bs-order-id="BR198">取消航班</a></li>
+                                                </ul>
+                                                <!-- </div> -->
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="align-middle">
+                                        <td class="ps-4">
+                                            <input type="checkbox" class="form-check-input">
+                                        </td>
+                                        <td scope="row" class="ps-4">13:45</td>
+                                        <td>東京 Tokyo</td>
+                                        <td>BR198</td>
+                                        <td>長榮航空 EVA Air</td>
+                                        <td>
+                                            <div class="text-muted">登機中</div>
+                                        </td>
+                                        <td class="text-end">615</td>
+                                        <td class="ps-5">
+                                            <div class="btn-group">
+                                                <a href="#" class="btn btn-sm btn-outline-dark">
+                                                    編輯 <i class="bi bi-pen"></i></a>
+                                                <!-- <div class="dropdown"> 移除 -->
+                                                <button class="btn btn-sm btn-outline-dark dropdown-toggle"
+                                                    type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">操作
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                    <li><a class="dropdown-item" href="#">修改狀態</a></li>
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                            data-bs-target="#deleteModal"
+                                                            data-bs-order-id="BR198">取消航班</a></li>
+                                                </ul>
+                                                <!-- </div> -->
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent py-3">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-end mb-0">
+                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">取消航班</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>確認取消「<span id="deleteText"></span>」的航班嗎？</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-dark"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-danger">確認取消</button>
+                                </div>
+                                <script>
+                                    const modalByDelete = document.querySelector('#deleteModal');//選取deleteModal視窗元素
+                                    modalByDelete.addEventListener('show.bs.modal', function (event) { //event是事件的來源，按下按鈕會把這件事件記錄下來
+                                        //show.bs.modal:當呼叫 show 實例方法時，此事件會立即觸發
+                                        const button = event.relatedTarget; //relatedTarget會指向這個按鈕的<a>
+                                        const orderId = button.dataset.bsOrderId; //透過 dataset 讀取 button的data-bs-order-id="BR198"資料，order-id=OrderId(需大寫)
+                                        console.log(button, orderId);
+                                        const modalText = modalByDelete.querySelector('#deleteText');//選取deleteText元素
+                                        modalText.textContent = orderId; //載入航班編號到刪除視窗中
+                                    })
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="./javascripts/all.js"></script>
+</body>
+
+</html>

@@ -5,6 +5,32 @@ $sidebar-width: 280px;
     width: $sidebar-width;
     margin-left: -$sidebar-width; //負值，拉到瀏覽器的左側外
     transition: margin-left .25s; // 動態轉換效果，時間越快越好
+    position: fixed; //固定在左側欄，不隨滾動而移動
+    top:0;//** //固定在左側欄的位置
+    .sidebar-link {
+        color: $primary ;
+        display: block;
+        text-decoration: none;
+        padding-top: 0.875rem;
+        padding-bottom: 0.875rem;
+        &:hover {
+         background-color: rgba($primary, 0.16);
+        }
+       }
+       .sidebar-link:focus {
+        position: relative;
+        color: $primary !important;
+        background-color: rgba($primary, 0.16);
+        &::after { //偽元素-線條
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 2px;
+         height: 100%;
+         width: 3px;
+         background: $primary;
+        }
+       }
 }
 
 .main {
@@ -15,6 +41,9 @@ $sidebar-width: 280px;
 .sidebar-toggled{
     .sidebar{
         margin-left: 0; //點擊展開按鈕後會展開
+    }
+    .main {
+        margin-left: $sidebar-width; //因為左側欄選單固定了，但main沒固定，所以要跟著選單一起移動
     }
 }
 
@@ -27,6 +56,8 @@ $sidebar-width: 280px;
 
     .main {
         width: calc(100vw - #{$sidebar-width});
+        margin-left: $sidebar-width; //因為左側欄選單固定了，但main沒固定，所以要跟著選單一起移動
+        transition: margin-left .25s;
     }
 
     //收合sidebar (點擊展開按鈕後會收合）
