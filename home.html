@@ -14,26 +14,29 @@
         <aside class="sidebar vh-100 border-end pt-3 d-flex bg-white flex-column">
             <!-- 後台名稱 -->
             <div class="px-4">
-                <strong>六角西餐廳</strong>
+                <a href="home.html" class="text-decoration-none text-dark"><strong>六角機場</strong></a>
                 - 後台管理
             </div>
             <!-- 選單 -->
             <div class="overflow-auto mt-3">
                 <div>
-                    <a href="#" class="sidebar-link">
+                    <a href="home.html" class="sidebar-link">
                         <div class="px-4">首頁</div>
                     </a>
                 </div>
                 <div>
                     <a href="#menu-order" class="sidebar-link" data-bs-toggle="collapse">
                         <div class="d-flex justify-content-between px-4">
-                            <p class="mb-0">訂單管理</p>
+                            <p class="mb-0">航班狀態管理</p>
                             <i class="bi bi-caret-down"></i>
                         </div>
                     </a>
                     <div class="collapse" id="menu-order">
-                        <a href="#" class="sidebar-link">
-                            <div class="ps-5">其它項目</div>
+                        <a href="orders.html" class="sidebar-link">
+                            <div class="ps-5">所有出發/抵達航班</div>
+                        </a>
+                        <a href="order.html" class="sidebar-link">
+                            <div class="ps-5">單一航班資料</div>
                         </a>
                     </div>
                 </div>
@@ -122,7 +125,7 @@
                                         <td>BR198</td>
                                         <td>長榮航空 EVA Air</td>
                                         <td>
-                                            <div class="text-muted">登機中</div>
+                                            <div class="text-muted">已飛</div>
                                         </td>
                                         <td class="text-end">615</td>
                                         <td class="ps-5">

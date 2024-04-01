@@ -14,26 +14,29 @@
         <aside class="sidebar vh-100 border-end pt-3 d-flex bg-white flex-column">
             <!-- 後台名稱 -->
             <div class="px-4">
-                <strong>六角西餐廳</strong>
+                <a href="home.html" class="text-decoration-none text-dark"><strong>六角機場</strong></a>
                 - 後台管理
             </div>
             <!-- 選單 -->
             <div class="overflow-auto mt-3">
                 <div>
-                    <a href="#" class="sidebar-link">
+                    <a href="home.html" class="sidebar-link">
                         <div class="px-4">首頁</div>
                     </a>
                 </div>
                 <div>
                     <a href="#menu-order" class="sidebar-link" data-bs-toggle="collapse">
                         <div class="d-flex justify-content-between px-4">
-                            <p class="mb-0">訂單管理</p>
+                            <p class="mb-0">航班狀態管理</p>
                             <i class="bi bi-caret-down"></i>
                         </div>
                     </a>
                     <div class="collapse" id="menu-order">
-                        <a href="#" class="sidebar-link">
-                            <div class="ps-5">其它項目</div>
+                        <a href="orders.html" class="sidebar-link">
+                            <div class="ps-5">所有出發/抵達航班</div>
+                        </a>
+                        <a href="order.html" class="sidebar-link">
+                            <div class="ps-5">單一航班資料</div>
                         </a>
                     </div>
                 </div>
@@ -54,7 +57,7 @@
                     <div class="col-lg-3 mb-3">
                         <nav id="detail-list-item" class="list-group sticky-top" style="top: 80px">
                             <a href="#card-summary" class="list-group-item list-group-item-action">
-                                摘要
+                                航班資訊
                             </a>
                             <a href="#card-detail" class="list-group-item list-group-item-action">
                                 購買品項
@@ -80,22 +83,30 @@
                         </nav>
                     </div>
                     <div class="col-lg-9">
-                        <div data-bs-spy="scroll" data-bs-target="#detail-list-item" data-bs-smooth-scroll="true"
+                        <div data-bs-spy="scroll" data-bs-target="#detail-list-item" data-bs-smooth-scroll="true" data-bs-root-margin="0px 0px -85%" 
                             class="scrollspy-example" tabindex="0">
                             <div class="card mb-3" id="card-summary">
                                 <div class="card-header">
-                                    摘要
+                                    航班資訊
                                 </div>
                                 <div class="card-body">
                                     <dl class="row mb-0">
-                                        <dt class="col-sm-3 text-truncate">訂單編號</dt>
-                                        <dd class="col-sm-9">TX123456789</dd>
-                                        <dt class="col-sm-3 text-truncate">訂單金額</dt>
-                                        <dd class="col-sm-9">1,800</dd>
-                                        <dt class="col-sm-3 text-truncate">訂單狀態</dt>
-                                        <dd class="col-sm-9">待處理</dd>
-                                        <dt class="col-sm-3 text-truncate">發票狀態</dt>
-                                        <dd class="col-sm-9">未開立</dd>
+                                        <dt class="col-sm-3 text-truncate">航班編號</dt>
+                                        <dd class="col-sm-9">BR198</dd>
+                                        <dt class="col-sm-3 text-truncate">航班時間</dt>
+                                        <dd class="col-sm-9">13:45</dd>
+                                        <dt class="col-sm-3 text-truncate">目的地</dt>
+                                        <dd class="col-sm-9">東京 Tokyo</dd>
+                                        <dt class="col-sm-3 text-truncate">航空公司</dt>
+                                        <dd class="col-sm-9">長榮航空 EVA Air</dd>
+                                        <dt class="col-sm-3 text-truncate">機型</dt>
+                                        <dd class="col-sm-9">787-10</dd>
+                                        <dt class="col-sm-3 text-truncate">登機門</dt>
+                                        <dd class="col-sm-9">615</dd>
+                                        <dt class="col-sm-3 text-truncate">航班狀態</dt>
+                                        <dd class="col-sm-9">
+                                            <p class="badge bg-success fs-5">已飛</p>
+                                        </dd>
                                     </dl>
                                 </div>
                             </div>
