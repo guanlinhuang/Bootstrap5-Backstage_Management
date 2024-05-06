@@ -7,7 +7,7 @@ $sidebar-width: 280px;
     transition: margin-left .25s; // 動態轉換效果，時間越快越好
     position: fixed; //固定在左側欄，不隨滾動而移動
     top:0;//** //固定在左側欄的位置
-    .sidebar-link {
+    &-link {
         color: $primary ;
         display: block;
         text-decoration: none;
@@ -17,7 +17,7 @@ $sidebar-width: 280px;
          background-color: rgba($primary, 0.16);
         }
        }
-       .sidebar-link:focus {
+       &-link:focus {
         position: relative;
         color: $primary !important;
         background-color: rgba($primary, 0.16);

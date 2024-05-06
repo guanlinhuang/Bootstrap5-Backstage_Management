@@ -8748,6 +8748,10 @@ textarea.form-control-lg {
   font-size: 1rem !important;
 }
 
+.fs-7 {
+  font-size: 0.875rem !important;
+}
+
 .fst-italic {
   font-style: italic !important;
 }
@@ -13789,22 +13793,22 @@ textarea.form-control-lg {
   position: fixed;
   top: 0;
 }
-.sidebar .sidebar-link {
+.sidebar-link {
   color: #ddadd5;
   display: block;
   text-decoration: none;
   padding-top: 0.875rem;
   padding-bottom: 0.875rem;
 }
-.sidebar .sidebar-link:hover {
+.sidebar-link:hover {
   background-color: rgba(221, 173, 213, 0.16);
 }
-.sidebar .sidebar-link:focus {
+.sidebar-link:focus {
   position: relative;
   color: #ddadd5 !important;
   background-color: rgba(221, 173, 213, 0.16);
 }
-.sidebar .sidebar-link:focus::after {
+.sidebar-link:focus::after {
   content: "";
   position: absolute;
   top: 0;
