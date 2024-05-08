@@ -6,31 +6,36 @@ $sidebar-width: 280px;
     margin-left: -$sidebar-width; //負值，拉到瀏覽器的左側外
     transition: margin-left .25s; // 動態轉換效果，時間越快越好
     position: fixed; //固定在左側欄，不隨滾動而移動
-    top:0;//** //固定在左側欄的位置
+    top: 0; //** //固定在左側欄的位置
+
     &-link {
         color: $primary ;
         display: block;
         text-decoration: none;
         padding-top: 0.875rem;
         padding-bottom: 0.875rem;
+
         &:hover {
-         background-color: rgba($primary, 0.16);
+            background-color: rgba($primary, 0.16);
         }
-       }
-       &-link:focus {
+    }
+
+    &-link:focus {
         position: relative;
         color: $primary !important;
         background-color: rgba($primary, 0.16);
-        &::after { //偽元素-線條
-         content: "";
-         position: absolute;
-         top: 0;
-         left: 2px;
-         height: 100%;
-         width: 3px;
-         background: $primary;
+
+        &::after {
+            //偽元素-線條
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 2px;
+            height: 100%;
+            width: 3px;
+            background: $primary;
         }
-       }
+    }
 }
 
 .main {
@@ -38,12 +43,23 @@ $sidebar-width: 280px;
 }
 
 //展開sidebar (點擊展開按鈕後會展開）
-.sidebar-toggled{
-    .sidebar{
+.sidebar-toggled {
+    .sidebar {
         margin-left: 0; //點擊展開按鈕後會展開
+        z-index: 5;
     }
+
     .main {
-        margin-left: $sidebar-width; //因為左側欄選單固定了，但main沒固定，所以要跟著選單一起移動
+        //margin-left: $sidebar-width; //因為左側欄選單固定了，但main沒固定，所以要跟著選單一起移動
+        margin-left: 0; //可解決x軸造成左右滑的問題
+    }
+
+    .top {
+        z-index: 4;
+    }
+    .top a{
+        margin-left: $sidebar-width;
+        transition: margin-left .25s;
     }
 }
 
@@ -60,18 +76,24 @@ $sidebar-width: 280px;
         transition: margin-left .25s;
     }
 
+
     //收合sidebar (點擊展開按鈕後會收合）
-    .sidebar-toggled{
-        .sidebar{
+    .sidebar-toggled {
+        .sidebar {
             margin-left: -$sidebar-width; //點擊展開按鈕後會收合
         }
-        .main{
-            width:100%; //收合後可直接拉滿整個寬度
+
+        .main {
+            width: 100%; //收合後可直接拉滿整個寬度
             margin-left: 0; //沒加這個好像沒影響？
+        }
+
+        .top a{
+            margin-left: 0
+
         }
     }
 }
 
 //calc把變數視為字串，所以需在前面加井字號再加大括號把變數框起來
 //注意：- 字號前後要空一格，否則無法編譯
-

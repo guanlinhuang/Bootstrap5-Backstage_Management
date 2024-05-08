@@ -13824,9 +13824,17 @@ textarea.form-control-lg {
 
 .sidebar-toggled .sidebar {
   margin-left: 0;
+  z-index: 5;
 }
 .sidebar-toggled .main {
+  margin-left: 0;
+}
+.sidebar-toggled .top {
+  z-index: 4;
+}
+.sidebar-toggled .top a {
   margin-left: 280px;
+  transition: margin-left 0.25s;
 }
 
 @media (min-width: 576px) {
@@ -13844,6 +13852,9 @@ textarea.form-control-lg {
   }
   .sidebar-toggled .main {
     width: 100%;
+    margin-left: 0;
+  }
+  .sidebar-toggled .top a {
     margin-left: 0;
   }
 }/*# sourceMappingURL=all.css.map */

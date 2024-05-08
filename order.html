@@ -85,8 +85,8 @@
                         </nav>
                     </div>
                     <div class="col-lg-9">
-                        <div data-bs-spy="scroll" data-bs-target="#detail-list-item" data-bs-smooth-scroll="true" data-bs-root-margin="0px 0px -85%" 
-                            class="scrollspy-example" tabindex="0">
+                        <div data-bs-spy="scroll" data-bs-target="#detail-list-item" data-bs-smooth-scroll="true"
+                            data-bs-root-margin="0px 0px -85%" class="scrollspy-example" tabindex="0">
                             <div class="card mb-3" id="card-summary">
                                 <div class="card-header">
                                     航班資訊
@@ -118,8 +118,7 @@
                                     購買品項
                                 </div>
                                 <div class="card-body p-0">
-                                    <table class="table table-hover mb-0 text-nowrap align-middle w-100 fs-7"
-                                        >
+                                    <table class="table table-hover mb-0 text-nowrap align-middle w-100 fs-7">
                                         <thead class="bg-light">
                                             <tr>
                                                 <th scope="col" class="ps-4 py-3 border-0"></th>
@@ -231,7 +230,10 @@
                                     <div class="row mb-3">
                                         <label for="taxNumber" class="col-sm-2 col-form-label">統一編號</label>
                                         <div class="col-sm-10">
-                                            <input type="number" maxlength="8" id="taxNumber" class="form-control" value="44223311">
+                                            <input type="number" maxlength="8" id="taxNumber" class="form-control"
+                                                value="44223311">
+                                            <!-- maxlength 屬性 在 type="number" 的情況下不能使用 -->
+                                            <!-- 需要改成使用 JavaScriipt 正規表達式來處理數字的表單驗證，在最下方-->
                                         </div>
                                     </div>
                                     <div class="row mb-3">
@@ -320,6 +322,19 @@
     </div>
     </main>
     </div>
+    <script> //使用 JavaScriipt 正規表達式來處理數字的表單驗證
+        const taxNumber = document.querySelector("#taxNumber");
+
+        taxNumber.addEventListener("input", function () {
+            let regex = new RegExp(/^[0-9]{0,8}$/);
+            const isValid = regex.test(Number(this.value)); // Number(this.value) : 字串-> 數字
+
+            if (!isValid) {
+                // 僅提取第 1 ~ 8 個字串數字，用法 : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice
+                this.value = this.value.slice(0, 8);
+            }
+        });
+    </script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
